@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteRule ^api/(\w+)/$ api/$1.php
+RewriteRule ^api/(\w+)/(\w+)/$ api/$1.php?param=$2
+
+<FilesMatch "data\.php|db\.php|functions\.php|\.htaccess">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
